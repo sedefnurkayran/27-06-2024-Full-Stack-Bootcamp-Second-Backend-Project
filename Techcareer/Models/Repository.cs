@@ -32,7 +32,7 @@ namespace Techcareer.Models
             }
 
         }
-        public static List<Category> Category
+        public static List<Category> Categories
         {
             get
             {

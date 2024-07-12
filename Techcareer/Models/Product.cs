@@ -1,3 +1,5 @@
+using System.ComponentModel.DataAnnotations;
+
 namespace Techcareer.Models
 {
 
@@ -5,7 +7,7 @@ namespace Techcareer.Models
     {
 
 
-        // [Display(Name="Bootcamp Id")]
+        //[Display(Name = "Bootcamp Id")]
         public int ProductId { get; set; }
 
         // [Required(ErrorMessage = "Bootcamp adı zorunlu.")]
