@@ -4,7 +4,7 @@ namespace Techcareer.Models
     public class ProductViewModel
     {
 
-        public List<Product> Products { get; set; } = null!;
+        public List<Product> Products { get; set; } = null!; //null olamaz
         public List<Category> Categories { get; set; } = null!;
 
         public string? SelectedCategory { get; set; }
