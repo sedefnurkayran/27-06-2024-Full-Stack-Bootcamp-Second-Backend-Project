@@ -165,7 +165,7 @@ public class HomeController : Controller
             ModelState.AddModelError("", "Bir dosya seçiniz.");
         }
 
-        if (ModelState.IsValid)
+        if (ModelState.IsValid) //Validasyonda herhangi bir hata yok ise kaydet.
         {
 
             Repository.EditProduct(model);
