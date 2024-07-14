@@ -1,3 +1,4 @@
+using System.ComponentModel.DataAnnotations;
 using System.Runtime.CompilerServices;
 using Microsoft.AspNetCore.SignalR;
 
@@ -49,5 +50,37 @@ namespace Techcareer.Models
             _products.Add(entity);
         }
 
+        //Profil-Detay sayfasini acma
+        public static Product? GetById(int? id)
+        {
+            return _products.FirstOrDefault(x => x.ProductId == id);
+        }
+        public static void EditProduct(Product updatedProduct)
+
+        {
+            var entity = _products.FirstOrDefault(x => x.ProductId == updatedProduct.ProductId);
+
+            if (entity != null)
+            {
+                entity.Name = updatedProduct.Name;
+                entity.Clock = updatedProduct.Clock;
+                entity.Description = updatedProduct.Description;
+                entity.Image = updatedProduct.Image;
+                entity.CategoryId = updatedProduct.CategoryId;
+                entity.IsActive = updatedProduct.IsActive;
+            }
+
+        }
+
+
+        public static void DeleteProduct(Product deletedProduct)
+        {
+            var entities = _products.FirstOrDefault(x => x.ProductId == deletedProduct.ProductId);
+
+            if (entities != null)
+            {
+                _products.Remove(entities);
+            }
+        }
     }
 }
